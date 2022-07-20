@@ -1,6 +1,6 @@
 <template>
-<div>
-    <p class="title-task"></p>
+<div v-bind="rr">
+    <p class="title-task">{{filt.title}}</p>
     <button>bbfdbdfb</button>
     </div>
 </template>
@@ -22,7 +22,11 @@ export default {
   },
    computed:{
      rr(){
-         return this.todosNew.find(item => item.id == this.$route.params.id)
+         return this.todosNew.find((item) => {
+          if(item.id == this.$route.params.id){
+            return this.filt = {...item}
+          }
+     })
         }
      }
   }
