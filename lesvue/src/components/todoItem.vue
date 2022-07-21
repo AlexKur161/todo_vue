@@ -8,9 +8,9 @@
             </div>
             <div v-if="show" class="wrap-switch">
             <input class="left-item" v-model="todo.title" type="text">
-            <button class="right-item"  @click="show = !show" >	&#10003;</button>
+            <button class="right-item"  @click="showVis" >	&#10003;</button>
             </div>
-            <button @click="$router.push(`/todos/${todo.id}`)">открыть</button>
+            <button class="more" @click="$router.push(`/todos/${todo.id}`)">Подробнее</button>
             <button class="btn-fix" @click="show = !show">&#9998;</button>
             <button class="btn-remove" v-on:click="$emit('remove-todo', todo.id), todo.show = true">&times;</button>
         </span>
@@ -20,7 +20,7 @@
 import contentTask from "@/components/contentTask"
 import contentTodo from "@/views/contentTodo"
 export default{
-    props:["todo","index","showTas"],
+    props:["todo","todos","index","showTas"],
     data(){
     return{
         show:false
@@ -38,6 +38,10 @@ methods:{
        if(this.todo.completed == false){
             return false
         }
+    },
+    showVis(){
+      this.$emit('show-vis')
+      this.show = false
     }
 }
 }
@@ -250,5 +254,9 @@ button{
 }
 .btn-fix{
     padding: 2px 6px;
+}
+.more{
+  font-size: 16px;
+  padding: 8px 15px;
 }
 </style>

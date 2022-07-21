@@ -1,7 +1,7 @@
 <template>
 <div v-bind="rr">
+  <router-link to="/todos">Перейти к списку</router-link>
     <p class="title-task">{{filt.title}}</p>
-    <button>bbfdbdfb</button>
     </div>
 </template>
 <script>

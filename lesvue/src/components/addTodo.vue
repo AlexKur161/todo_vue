@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent='sub'> 
         <input placeholder="Введите заметку" class="create-task" v-model="title" type="text">
-        <input class="create-task-btn" @click='sub' type="button" value="Добавить">
+        <input class="create-task-btn" @click='sub' type="button" value="Добавить" :disabled="dis()">
     </form>
 </template>
 <script>
@@ -20,8 +20,18 @@ methods:{
         completed: false,
         show: false
        }
+       if(newTodo.title == ""){
+        alert('Заполните поле с названием')
+       }else
        this.$emit("sub-item", newTodo)
        this.title = ""
+    },
+    dis(){
+        if(this.title == ""){
+            return true
+        }else{
+            return false
+        }
     }
 }
 }

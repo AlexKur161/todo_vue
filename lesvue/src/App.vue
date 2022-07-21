@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <h1>Список дел</h1>
-    <hr>
+    
     <router-view />
   </div>
 </template>
@@ -83,6 +82,7 @@ body {
 .switch-sel:focus{
   border:none;
   outline: none;
+  border-radius: 0px;
 }
 .switch-sel:active{
   border:none;
@@ -97,8 +97,8 @@ border-radius: 15px 15px 0px 0px;
     border: none;
     height: 38px;
     font-size: 16px;
-    color: #fff;
-    background: #007bff;
+    color: #000;
+    background: #ffffff;
     padding-left: 20px;
    
 }
@@ -126,10 +126,17 @@ border-radius: 15px 15px 0px 0px;
   color: #fff;
   transform: translateY(-7px);
 }
+.create-task-btn:disabled{
+  opacity: 0.5;
+}
 input::-webkit-input-placeholder {
-  color:#fff;
+  color:#000;
 }
 input:-moz-placeholder {
-  color:#fff;
+  color:#000;
 }
+option{
+  border-radius: 20px;
+}
+
 </style>

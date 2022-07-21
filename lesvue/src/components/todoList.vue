@@ -5,10 +5,12 @@
        <todoItem
        v-for="(todo, index,) in todos"
        :key="todo.id"
+       :todos="todos"
        :todo="todo"
        :index="index"
        v-on:remove-todo="removeTodo"
        @save-local="saveLocal"
+       @show-vis="showVis"
          />
    </transition-group>
 </div>
@@ -26,7 +28,11 @@ export default{
         },
         saveLocal(){
             this.$emit('save-local')
-        }
+        },
+     showVis() {
+      const parsed = JSON.stringify(this.todos);
+      localStorage.setItem('todos', parsed);
+    }
     }
 }
 </script>
