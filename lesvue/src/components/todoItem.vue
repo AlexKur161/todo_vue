@@ -195,6 +195,14 @@ methods:{
     height: 30px;
     font-size: 16px;
 }
+.left-item:focus{
+border: none;
+outline: none;
+}
+.left-item:active{
+border: none;
+outline: none;
+}
 .right-item{
    position: absolute;
     right: 20px;
@@ -233,7 +241,8 @@ li{
 }
 .title-task{
     width:160px;
-    overflow-x:hidden;
+    overflow:hidden;
+    height: 16px;
 }
 button{
     color: #fff;
@@ -258,5 +267,33 @@ button{
 .more{
   font-size: 16px;
   padding: 8px 15px;
+}
+@media(max-width:500px){
+.title-task{
+  width: 90px;
+}
+.task{
+  gap: 10px;
+}
+}
+@media(max-width:400px){
+.more{
+  font-size:12px;
+}
+.title-task{
+  font-size:14px;
+}
+.btn-remove{
+  padding: 4px 8px;
+}
+button{
+  font-size:14px;
+}
+.btn-fix{
+  padding: 3px 5px;
+}
+.title-task{
+    width:50px;
+}
 }
 </style>

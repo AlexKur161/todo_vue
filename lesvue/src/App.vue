@@ -1,9 +1,19 @@
 <template>
   <div id="app">
-    
+    <headerNew> </headerNew>
     <router-view />
   </div>
 </template>
+
+<script>
+import headerNew from "@/components/headerNew.vue"
+
+export default{
+  components:{
+    headerNew
+  }
+}
+</script>
 
 
 <style lang="scss">
@@ -13,7 +23,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+*{
+  padding: 0px;
+  margin: 0px;
 }
 .line{
    opacity: 0.5;
@@ -61,8 +74,10 @@ ul{
   }
    }
 .link-router{
-  display: block;
-  margin-bottom: 30px;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    width: fit-content;
 }
 body {
   background: aliceblue;
@@ -78,6 +93,7 @@ body {
     text-align: center;
     border-radius: 15px;
      font-size: 16px;
+     margin-bottom: 30px;
 }
 .switch-sel:focus{
   border:none;
@@ -138,5 +154,44 @@ input:-moz-placeholder {
 option{
   border-radius: 20px;
 }
+.header{
+  width: 100%;
+  height: 100px;
+  background: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.header-title{
+  color:#fff;
+}
+.info-txt{
+  width: 100%;
+}
+@media(max-width:500px){
+.title-task{
+  widows: 90px;
+}
+.task{
+  gap: 10px;
+}
+}
 
+@media(max-width:400px){
+input::-webkit-input-placeholder {
+  text-align: center;
+}
+input:-moz-placeholder {
+  text-align: center;
+}
+.create-task{
+     width: 230px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+.create-task-btn{
+  width: 230px;
+}
+}
 </style>

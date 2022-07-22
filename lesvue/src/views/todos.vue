@@ -7,7 +7,7 @@
     />
     <select :class="{testselect:selected}" @click="selected = !selected" class="switch-sel" v-model="sel">
         <option  value="all">Все</option>
-        <option  value="noCompleted">Не выполненные</option>
+        <option  value="noCompleted">В процессе</option>
         <option  value="completed">Выполненные</option>
     </select>
     <todoList
