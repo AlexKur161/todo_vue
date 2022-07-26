@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="bord-select" @click="selected = false">
     <router-link class="link-router" to="/">Главная</router-link>
     <addTodo 
     v-bind:todos="todos"
     @sub-item="subItem"
     />
-    <select :class="{testselect:selected}" @click="selected = !selected" class="switch-sel" v-model="sel">
+    <select :class="{testselect:selected}" @click.stop="selected = !selected" class="switch-sel" v-model="sel">
         <option  value="all">Все</option>
         <option  value="noCompleted">В процессе</option>
         <option  value="completed">Выполненные</option>

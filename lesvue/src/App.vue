@@ -28,6 +28,9 @@ export default{
   padding: 0px;
   margin: 0px;
 }
+.bord-select{
+  min-height: 80vh;
+}
 .line{
    opacity: 0.5;
 }
@@ -94,18 +97,19 @@ body {
     border-radius: 15px;
      font-size: 16px;
      margin-bottom: 30px;
+     
 }
 .switch-sel:focus{
   border:none;
   outline: none;
-  border-radius: 0px;
+ 
 }
 .switch-sel:active{
   border:none;
   outline: none;
 }
 .testselect{
-border-radius: 15px 15px 0px 0px;
+ border-radius: 15px 15px 0px 0px;
 }
 .create-task{
    margin: auto 0;
